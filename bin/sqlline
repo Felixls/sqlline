@@ -2,6 +2,9 @@
 # sqlline - Script to launch SQL shell on Unix, Linux or Mac OS
 
 BINPATH=$(dirname $0)
-exec java -Djava.ext.dirs=$BINPATH sqlline.SqlLine "$@"
+DREMIO=/home/sergio/kibi/dremio-community-1.2.2/jars/jdbc-driver
+JDBCDRIVERS=/home/sergio/kibi/resources/jdbc
+
+exec java -Djava.ext.dirs=$BINPATH:$DREMIO:$JDBCDRIVERS sqlline.SqlLine "$@"
 
 # End sqlline
